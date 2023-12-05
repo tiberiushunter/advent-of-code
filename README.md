@@ -107,7 +107,7 @@ Project Link: [GitHub][project-url]
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 <!-- Project Specific -->
-[project-url]: https://github.com/tiberiushunter/advent-of-code-console/
+[project-url]: https://github.com/tiberiushunter/advent-of-code/
 
 [aoc]: https://adventofcode.com/
 [.net]: https://dotnet.microsoft.com/
@@ -116,20 +116,20 @@ Project Link: [GitHub][project-url]
 
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg?style=for-the-badge
 
-[contributors-shield]: https://img.shields.io/github/contributors/tiberiushunter/advent-of-code-console.svg?style=for-the-badge
-[contributors-url]: https://github.com/tiberiushunter/advent-of-code-console/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/tiberiushunter/advent-of-code.svg?style=for-the-badge
+[contributors-url]: https://github.com/tiberiushunter/advent-of-code/graphs/contributors
 
-[forks-shield]: https://img.shields.io/github/forks/tiberiushunter/advent-of-code-console.svg?style=for-the-badge
-[forks-url]: https://github.com/tiberiushunter/advent-of-code-console/network/members
+[forks-shield]: https://img.shields.io/github/forks/tiberiushunter/advent-of-code.svg?style=for-the-badge
+[forks-url]: https://github.com/tiberiushunter/advent-of-code/network/members
 
-[stars-shield]: https://img.shields.io/github/stars/tiberiushunter/advent-of-code-console.svg?style=for-the-badge
-[stars-url]: https://github.com/tiberiushunter/advent-of-code-console/stargazers
+[stars-shield]: https://img.shields.io/github/stars/tiberiushunter/advent-of-code.svg?style=for-the-badge
+[stars-url]: https://github.com/tiberiushunter/advent-of-code/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/tiberiushunter/advent-of-code-console.svg?style=for-the-badge
-[issues-url]: https://github.com/tiberiushunter/advent-of-code-console/issues
+[issues-shield]: https://img.shields.io/github/issues/tiberiushunter/advent-of-code.svg?style=for-the-badge
+[issues-url]: https://github.com/tiberiushunter/advent-of-code/issues
 
-[license-shield]: https://img.shields.io/github/license/tiberiushunter/advent-of-code-console.svg?style=for-the-badge
-[license-url]: https://github.com/tiberiushunter/advent-of-code-console/blob/main/LICENSE
+[license-shield]: https://img.shields.io/github/license/tiberiushunter/advent-of-code.svg?style=for-the-badge
+[license-url]: https://github.com/tiberiushunter/advent-of-code/blob/main/LICENSE
 
 <!-- Contact Specific -->
 [github-shield]: https://img.shields.io/badge/-GitHub-black.svg?style=for-the-badge&logo=github&colorB=555
