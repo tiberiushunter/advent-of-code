@@ -88,7 +88,7 @@ public class Day3 : IDay
 		return -1;
 	}
 
-	private List<(int x, int y)> boundaryCoords =
+	private readonly List<(int x, int y)> boundaryCoords =
 		[
 			(-1, 1),
 			(0, 1),
