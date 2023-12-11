@@ -10,7 +10,7 @@ public class Day15 : IDay
 	{
 		var startingNumbers = input
 			.Split(',')
-			.Select(n => int.Parse(n))
+			.Select(int.Parse)
 			.ToArray();
 
 		return GetSpokenNumberAtTurn(startingNumbers, 2020).ToString();
@@ -20,13 +20,13 @@ public class Day15 : IDay
 	{
 		var startingNumbers = input
 			.Split(',')
-			.Select(n => int.Parse(n))
+			.Select(int.Parse)
 			.ToArray();
 
 		return GetSpokenNumberAtTurn(startingNumbers, 30000000).ToString();
 	}
 
-	private int GetSpokenNumberAtTurn(int[] startingNumbers, int numberOfTurns)
+	private static int GetSpokenNumberAtTurn(int[] startingNumbers, int numberOfTurns)
 	{
 		int[] spokenNumbers = new int[numberOfTurns];
 		int currentNumber = 0;

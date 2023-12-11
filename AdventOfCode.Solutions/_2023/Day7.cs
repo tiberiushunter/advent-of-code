@@ -14,9 +14,9 @@ public class Day7 : IDay
 
 		List<Hand> hands = sets
 			.Select(set => set.Split(' '))
-			.Select(set => new Hand(
-				int.Parse(set[1]),
-				set[0].Select(card => CharCardToPlayingCard(card)).ToList())).ToList();
+			.Select(hand => new Hand(
+				int.Parse(hand[1]),
+				hand[0].Select(card => CharCardToPlayingCard(card)).ToList())).ToList();
 
 		List<Hand>[] handTypes = [[], [], [], [], [], [], []];
 
@@ -44,9 +44,9 @@ public class Day7 : IDay
 
 		List<Hand> hands = sets
 			.Select(set => set.Split(' '))
-			.Select(set => new Hand(
-				int.Parse(set[1]),
-				set[0].Select(card => CharCardToPlayingCardJokerWildCards(card)).ToList())).ToList();
+			.Select(hand => new Hand(
+				int.Parse(hand[1]),
+				hand[0].Select(card => CharCardToPlayingCardJokerWildCards(card)).ToList())).ToList();
 
 		List<Hand>[] handTypes = [[], [], [], [], [], [], []];
 

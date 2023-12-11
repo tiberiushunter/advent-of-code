@@ -1,5 +1,5 @@
 ﻿using AdventOfCode.Domain.Interfaces;
-using AdventOfCode.Solutions.Helpers;
+using AdventOfCode.Solutions.Extensions;
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode.Solutions._2023;
@@ -61,7 +61,7 @@ public class Day5 : IDay
 
 		for (int i = 0; i < seedRanges.Count(); i += 2)
 		{
-			seeds.AddRange(EnumerableHelper.LongRange(seedRanges.ElementAt(i), seedRanges.ElementAt(i + 1)));
+			seeds.AddRange(EnumerableExtensions.LongRange(seedRanges.ElementAt(i), seedRanges.ElementAt(i + 1)));
 		}
 
 		var seedToSoil = DeserializeInputToMap(inputSections[1]);

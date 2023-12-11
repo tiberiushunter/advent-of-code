@@ -1,6 +1,7 @@
 using AdventOfCode.Domain.Interfaces;
 using AdventOfCode.Solutions.Helpers;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace AdventOfCode.Solutions._2020;
 
@@ -17,13 +18,9 @@ public class Day7 : IDay
 
 		foreach (var bag in bags)
 		{
-			foreach (var innerBag in bag.InnerBags)
-			{
-				if (innerBag.Colour == "shiny gold")
-				{
-					suspects.Add(bag);
-				}
-			}
+			suspects.AddRange(from innerBag in bag.InnerBags
+							  where innerBag.Colour == "shiny gold"
+							  select bag);
 		}
 
 		while (bagCount != suspects.Count)
@@ -61,9 +58,10 @@ public class Day7 : IDay
 		{
 			if (bag.Colour == "shiny gold")
 			{
-				foreach (var innerBag in bag.InnerBags)
+				for (int i = 0; i < bag.InnerBags.Count; i++)
 				{
-					for (int i = 0; i < innerBag.NumberOfBags; i++)
+					var innerBag = bag.InnerBags[i];
+					for (int j = 0; j < innerBag.InnerBags.Count; j++)
 					{
 						nextLevelBags.Add(innerBag);
 						bagCount++;
@@ -82,7 +80,7 @@ public class Day7 : IDay
 					{
 						foreach (Bag innerBag in bag.InnerBags)
 						{
-							for (int j = 0; j < innerBag.NumberOfBags; j++)
+							for (int j = 0; j < innerBag.InnerBags.Count; j++)
 							{
 								currentLevelBags.Add(innerBag);
 								bagCount++;
@@ -93,7 +91,7 @@ public class Day7 : IDay
 			}
 
 			nextLevelBags = currentLevelBags;
-			currentLevelBags = new List<Bag>();
+			currentLevelBags = [];
 		}
 
 		return bagCount.ToString();
@@ -110,14 +108,23 @@ public class Day7 : IDay
 			var match = bagRegex.Match(line);
 			if (match.Success)
 			{
-				string[] innerBags = match.Groups[2].Value.Split(new char[] { ',', '.' }, StringSplitOptions.RemoveEmptyEntries);
+				string[] innerBags = match.Groups[2].Value.Split(",.".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 				var innerBagsList = new List<Bag>(innerBags.Length);
 
 				for (int i = 0; i < innerBags.Length; i++)
 				{
 					string[] innerBagDetails = innerBags[i].Trim().Split(" ");
-					innerBagsList.Add(new Bag(int.Parse(innerBagDetails[0]), innerBagDetails[1] + " " + innerBagDetails[2]));
+
+					var innerBagInnerBags = new List<Bag>();
+
+					for (int j = 0; j < int.Parse(innerBagDetails[0]); j++)
+					{
+						innerBagInnerBags.Add(new Bag());
+					}
+
+					innerBagsList.Add(new Bag(innerBagDetails[1] + " " + innerBagDetails[2], innerBagInnerBags));
 				}
+
 				bags.Add(new Bag(match.Groups[1].Value, innerBagsList));
 			}
 		}
@@ -126,19 +133,13 @@ public class Day7 : IDay
 
 	internal class Bag
 	{
-		public int NumberOfBags;
-		public string Colour { get; set; }
-		public List<Bag> InnerBags;
+		public string? Colour { get; set; }
+		public List<Bag> InnerBags { get; set; } = [];
 
-		public Bag(int numOfBags, string colour)
-		{
-			NumberOfBags = numOfBags;
-			Colour = colour;
-		}
+		public Bag() { }
 
 		public Bag(string colour, List<Bag> innerBags)
 		{
-			NumberOfBags = 1;
 			Colour = colour;
 			InnerBags = innerBags;
 		}
