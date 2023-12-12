@@ -38,7 +38,7 @@ Feel free to run through the solutions (*Note: Potential Spoilers* :see_no_evil:
 |2020|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|||||||
 |2021|:star2:|:star2:|||||||||||||||||||||||
 |2022|||||||||||||||||||||||||
-|2023|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|||||||||||||||||
+|2023|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:|:star2:||||||||||||||||
 
 <!-- GETTING STARTED -->
 ## Getting Started
